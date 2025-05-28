@@ -83,9 +83,9 @@ const Home = () => {
             >
               <Link 
                 to="/contact" 
-                className="inline-block bg-[#1F3C88] text-white px-8 py-3 rounded-lg hover:bg-[#008080]/90 transition-colors duration-200 font-medium text-lg"
+                className="inline-block bg-[#1F3C88] text-white px-8 py-3 rounded-lg hover:bg-[#4A6CF7] transition-colors duration-200 font-medium text-lg"
               >
-                Get Started
+                Get in Touch
               </Link>
             </motion.div>
           </div>
@@ -113,14 +113,14 @@ const Home = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#FAFAFA] p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-[#F7F9FC] p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold text-[#002B36] mb-3">{service.title}</h3>
-                <p className="text-[#002B36]/80 mb-4">{service.description}</p>
+                <h3 className="text-xl font-semibold text-[#1A1A1A] mb-3">{service.title}</h3>
+                <p className="text-[#5C6B8A] mb-4">{service.description}</p>
                 <Link 
                   to="/services" 
-                  className="text-[#008080] hover:text-[#008080]/80 font-medium inline-flex items-center"
+                  className="text-[#1F3C88] hover:text-[#4A6CF7] font-medium inline-flex items-center transition-colors duration-200"
                 >
                   Learn More 
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -165,41 +165,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      {/* <section className="py-20 bg-[#008080]">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.h2 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl md:text-4xl font-bold text-white mb-6"
-            >
-              Ready to Get Started?
-            </motion.h2>
-            <motion.p 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-[#E0FFFF] text-lg mb-8"
-            >
-              Let's discuss how we can help you achieve your financial goals
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.6 }}
-            >
-              <Link 
-                to="/contact" 
-                className="inline-block bg-white text-[#008080] px-8 py-3 rounded-lg hover:bg-[#E0FFFF] transition-colors duration-200 font-medium text-lg"
-              >
-                Contact Us Today
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </section> */}
     </div>
   );
 };

@@ -205,17 +205,6 @@ const Contact = () => {
                 ></iframe>
               </div>
             </div>
-
-            {/* Why Choose Us */}
-            {/* <div className="bg-white rounded-lg shadow-lg p-8">
-              <h2 className="text-2xl font-bold text-[#1A1A1A] mb-6">Why Choose Us</h2>
-              <ul className="space-y-4">
-                <li className="flex items-start">
-                  <span className="text-[#4A6CF7] mr-3 mt-1">✓</span>
-                  <span className="text-[#5C6B8A]">Personalized attention and direct communication</span>
-                </li>
-              </ul>
-            </div> */}
           </motion.div>
         </div>
       </div>

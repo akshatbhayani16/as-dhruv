@@ -142,12 +142,12 @@ const Services = () => {
                       transition={{ delay: 0.1 * serviceIndex }}
                       className="flex items-start group"
                     >
-                      <span className="text-[#4A6CF7] mr-3 mt-1">
+                      <span className="text-[#1F3C88] mr-3 mt-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
-                      <span className="text-[#1A1A1A] group-hover:text-[#1F3C88] transition-colors duration-200">
+                      <span className="text-[#1A1A1A] group-hover:text-[#4A6CF7] transition-colors duration-200">
                         {service}
                       </span>
                     </motion.li>

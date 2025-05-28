@@ -80,12 +80,12 @@ const About = () => {
               <h3 className="text-xl font-semibold text-[#1F3C88]">Education</h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
-                  <span className="text-[#A8C3FF] mr-2">•</span>
-                  <span className="text-[#5C6B8A]/80">Chartered Accountant (CA)</span>
+                  <span className="text-[#1F3C88] mr-2">•</span>
+                  <span className="text-[#5C6B8A]">Chartered Accountant (CA)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-[#A8C3FF] mr-2">•</span>
-                  <span className="text-[#5C6B8A]/80">Bachelor's in Commerce</span>
+                  <span className="text-[#1F3C88] mr-2">•</span>
+                  <span className="text-[#5C6B8A]">Bachelor's in Commerce</span>
                 </li>
               </ul>
             </div>
