@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Services = () => {
   const serviceCategories = [
@@ -71,33 +72,94 @@ const Services = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.5
+      }
+    }
+  };
+
   return (
-    <div className="pt-20">
+    <div className="pt-20 bg-[#FAFAFA] min-h-screen">
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-center mb-12">Our Services</h1>
+        <motion.h1 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#002B36]"
+        >
+          Our Services
+        </motion.h1>
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="text-center text-[#002B36]/80 mb-12 max-w-2xl mx-auto"
+        >
+          Comprehensive financial and business solutions tailored to your needs
+        </motion.p>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           {serviceCategories.map((category, index) => (
-            <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="bg-slate-800 text-white p-4">
+            <motion.div
+              key={index}
+              variants={itemVariants}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300"
+            >
+              <div className="bg-[#008080] text-white p-6">
                 <h3 className="text-xl font-semibold">{category.title}</h3>
               </div>
               <div className="p-6">
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {category.services.map((service, serviceIndex) => (
-                    <li key={serviceIndex} className="flex items-start">
-                      <span className="text-blue-600 mr-2">•</span>
-                      <span className="text-gray-700">{service}</span>
-                    </li>
+                    <motion.li 
+                      key={serviceIndex}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.1 * serviceIndex }}
+                      className="flex items-start group"
+                    >
+                      <span className="text-[#00ACC1] mr-3 mt-1">
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                      </span>
+                      <span className="text-[#002B36] group-hover:text-[#008080] transition-colors duration-200">
+                        {service}
+                      </span>
+                    </motion.li>
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Services; 
+export default Services;

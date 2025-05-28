@@ -1,72 +1,133 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-const serviceHighlights = [
-  {
-    title: "Auditing & Assurance",
-    description: "Comprehensive audit services including statutory, internal, tax, and GST audits."
-  },
-  {
-    title: "Income Tax",
-    description: "Expert tax planning, return filing, and consultation services for individuals and businesses."
-  },
-  {
-    title: "GST Services",
-    description: "Complete GST solutions from registration to compliance and assessment handling."
-  },
-  {
-    title: "Corporate Law",
-    description: "Business incorporation, compliance, and corporate law consultation services."
-  },
-  {
-    title: "Financing",
-    description: "Professional assistance in project reports, bank financing, and venture funding."
-  },
-  {
-    title: "Advanced Services",
-    description: "Specialized services including IPO consultation, AIF setting up, and IND AS consultation."
-  }
-];
+import { motion } from 'framer-motion';
 
 const Home = () => {
+  const serviceHighlights = [
+    {
+      title: "Auditing & Assurance",
+      description: "Comprehensive audit services including statutory, internal, tax, and GST audits.",
+      icon: "📊"
+    },
+    {
+      title: "Income Tax",
+      description: "Expert tax planning, return filing, and consultation services for individuals and businesses.",
+      icon: "💰"
+    },
+    {
+      title: "GST Services",
+      description: "Complete GST solutions from registration to compliance and assessment handling.",
+      icon: "📝"
+    },
+    {
+      title: "Corporate Law",
+      description: "Business incorporation, compliance, and corporate law consultation services.",
+      icon: "⚖️"
+    },
+    {
+      title: "Financing",
+      description: "Professional assistance in project reports, bank financing, and venture funding.",
+      icon: "💼"
+    },
+    {
+      title: "Advanced Services",
+      description: "Specialized services including IPO consultation, AIF setting up, and IND AS consultation.",
+      icon: "🚀"
+    }
+  ];
+
+  const features = [
+    {
+      title: "Expert Team",
+      description: "Our team of certified professionals brings years of experience.",
+      icon: "👥"
+    },
+    {
+      title: "Personalized Service",
+      description: "We provide tailored solutions for your unique needs.",
+      icon: "🎯"
+    },
+    {
+      title: "Timely Delivery",
+      description: "We ensure prompt and accurate service delivery.",
+      icon: "⏰"
+    }
+  ];
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-[#FAFAFA]">
       {/* Hero Section */}
-      <div 
-        className="relative h-screen bg-cover bg-center" 
-        style={{ backgroundImage: "url('/Profile-Image.png')" }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 to-slate-900 opacity-80"></div>
-        <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="text-white max-w-2xl">
-            <h1 className="text-5xl font-bold mb-4">Welcome to CA Firm</h1>
-            <p className="text-xl mb-8">Your Trusted Partner in Financial Excellence</p>
-            <Link to="/contact" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md">
-              Get in Touch
-            </Link>
+      <div className="pt-20">
+        <div className="container mx-auto px-4 py-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <motion.h1 
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-4xl md:text-6xl font-bold text-[#002B36] mb-6"
+            >
+              Your Trusted Financial Partner
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-xl text-[#002B36]/80 mb-8"
+            >
+              Providing comprehensive financial solutions with a personal touch. Let's build your financial success story together.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <Link 
+                to="/contact" 
+                className="inline-block bg-[#008080] text-white px-8 py-3 rounded-lg hover:bg-[#008080]/90 transition-colors duration-200 font-medium text-lg"
+              >
+                Get Started
+              </Link>
+            </motion.div>
           </div>
         </div>
       </div>
 
       {/* Services Preview Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#002B36] mb-4">Our Services</h2>
+            <p className="text-[#002B36]/80 max-w-2xl mx-auto">
+              Comprehensive financial solutions tailored to meet your specific needs and goals
+            </p>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {serviceHighlights.map((service, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <h3 className="text-xl font-semibold mb-4">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-[#FAFAFA] p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold text-[#002B36] mb-3">{service.title}</h3>
+                <p className="text-[#002B36]/80 mb-4">{service.description}</p>
                 <Link 
                   to="/services" 
-                  className="text-blue-600 hover:text-blue-800 font-medium inline-flex items-center"
+                  className="text-[#008080] hover:text-[#008080]/80 font-medium inline-flex items-center"
                 >
                   Learn More 
                   <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -75,32 +136,72 @@ const Home = () => {
       {/* Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us?</h2>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#002B36] mb-4">Why Choose Us</h2>
+            <p className="text-[#002B36]/80 max-w-2xl mx-auto">
+              We combine expertise with personalized service to deliver exceptional results
+            </p>
+          </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard 
-              title="Expert Team"
-              description="Our team of certified professionals brings years of experience."
-            />
-            <FeatureCard 
-              title="Personalized Service"
-              description="We provide tailored solutions for your unique needs."
-            />
-            <FeatureCard 
-              title="Timely Delivery"
-              description="We ensure prompt and accurate service delivery."
-            />
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                className="bg-white p-8 rounded-lg shadow-lg text-center hover:shadow-xl transition-all duration-300"
+              >
+                <div className="text-4xl mb-4">{feature.icon}</div>
+                <h3 className="text-xl font-semibold text-[#002B36] mb-4">{feature.title}</h3>
+                <p className="text-[#002B36]/80">{feature.description}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* CTA Section */}
+      {/* <section className="py-20 bg-[#008080]">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold text-white mb-6"
+            >
+              Ready to Get Started?
+            </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-[#E0FFFF] text-lg mb-8"
+            >
+              Let's discuss how we can help you achieve your financial goals
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <Link 
+                to="/contact" 
+                className="inline-block bg-white text-[#008080] px-8 py-3 rounded-lg hover:bg-[#E0FFFF] transition-colors duration-200 font-medium text-lg"
+              >
+                Contact Us Today
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section> */}
     </div>
   );
 };
-
-const FeatureCard = ({ title, description }) => (
-  <div className="bg-white p-6 rounded-lg shadow-lg">
-    <h3 className="text-xl font-semibold mb-4">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-  </div>
-);
 
 export default Home;
