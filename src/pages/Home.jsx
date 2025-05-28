@@ -83,7 +83,7 @@ const Home = () => {
             >
               <Link 
                 to="/contact" 
-                className="inline-block bg-[#008080] text-white px-8 py-3 rounded-lg hover:bg-[#008080]/90 transition-colors duration-200 font-medium text-lg"
+                className="inline-block bg-[#1F3C88] text-white px-8 py-3 rounded-lg hover:bg-[#008080]/90 transition-colors duration-200 font-medium text-lg"
               >
                 Get Started
               </Link>

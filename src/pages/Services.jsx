@@ -94,13 +94,13 @@ const Services = () => {
   };
 
   return (
-    <div className="pt-20 bg-[#FAFAFA] min-h-screen">
+    <div className="pt-20 bg-[#F7F9FC]">
       <div className="container mx-auto px-4 py-16">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#002B36]"
+          className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#1A1A1A]"
         >
           Our Services
         </motion.h1>
@@ -108,7 +108,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
-          className="text-center text-[#002B36]/80 mb-12 max-w-2xl mx-auto"
+          className="text-center text-[#5C6B8A] mb-12 max-w-2xl mx-auto"
         >
           Comprehensive financial and business solutions tailored to your needs
         </motion.p>
@@ -129,7 +129,7 @@ const Services = () => {
               }}
               className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300"
             >
-              <div className="bg-[#008080] text-white p-6">
+              <div className="bg-[#1F3C88] text-white p-6">
                 <h3 className="text-xl font-semibold">{category.title}</h3>
               </div>
               <div className="p-6">
@@ -142,12 +142,12 @@ const Services = () => {
                       transition={{ delay: 0.1 * serviceIndex }}
                       className="flex items-start group"
                     >
-                      <span className="text-[#00ACC1] mr-3 mt-1">
+                      <span className="text-[#4A6CF7] mr-3 mt-1">
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
-                      <span className="text-[#002B36] group-hover:text-[#008080] transition-colors duration-200">
+                      <span className="text-[#1A1A1A] group-hover:text-[#1F3C88] transition-colors duration-200">
                         {service}
                       </span>
                     </motion.li>
