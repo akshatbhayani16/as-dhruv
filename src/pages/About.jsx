@@ -166,7 +166,7 @@ const About = () => {
 
         {/* Qualifications Section */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-20 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1F3C88] to-[#4A6CF7]"></div>
+          {/* <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1F3C88] to-[#4A6CF7]"></div> */}
           <h2 className="text-3xl font-bold text-[#1A1A1A] text-center mb-8">Professional Qualifications</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
