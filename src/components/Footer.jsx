@@ -21,15 +21,15 @@ const Footer = () => {
         </svg>
       )
     },
-    {
-      name: 'Facebook',
-      url: 'https://facebook.com/your-company',
-      icon: (
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-        </svg>
-      )
-    },
+    // {
+    //   name: 'Facebook',
+    //   url: 'https://facebook.com/your-company',
+    //   icon: (
+    //     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    //       <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+    //     </svg>
+    //   )
+    // },
     {
       name: 'Instagram',
       url: 'https://instagram.com/your-company',
@@ -47,7 +47,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">A.S. Dhruv & Associates</h3>
+            <h3 className="text-xl font-bold mb-4">A S Dhruv & Associates</h3>
             <p className="text-[#A8C3FF]">
               Your trusted partner in financial excellence and business growth.
             </p>
@@ -98,16 +98,19 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
             <ul className="space-y-2">
               <li className="text-[#A8C3FF]">
-                <i className="fas fa-map-marker-alt mr-2"></i>
-                123 Business Street, City, State
-              </li>
+                {/* <i className="fas fa-map-marker-alt mr-2"></i> */}
+                404,  4th floor, Sumeru Prime,
+                <br></br>
+                Opp. Dakshinamurti Vinay Mandir
+                Waghawadi road, Bhavnagar, Gujarat
+                </li>
               <li className="text-[#A8C3FF]">
                 <i className="fas fa-phone mr-2"></i>
-                +1 234 567 8900
+                +91 7435 049 814
               </li>
               <li className="text-[#A8C3FF]">
                 <i className="fas fa-envelope mr-2"></i>
-                info@cafirm.com
+                caakshat.dhruv@gmail.com
               </li>
             </ul>
           </div>
@@ -116,7 +119,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-[#A8C3FF]/20 mt-8 pt-8 text-center">
           <p className="text-[#A8C3FF]">
-            © {new Date().getFullYear()} A.S. Dhruv & Associates. All rights reserved.
+            © {new Date().getFullYear()} A S Dhruv & Associates. All rights reserved.
           </p>
         </div>
       </div>

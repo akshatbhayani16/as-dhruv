@@ -26,20 +26,20 @@ const Contact = () => {
     {
       icon: "📍",
       title: "Office Location",
-      details: "123 Business Street, City, State",
-      link: "https://maps.google.com"
+      details: "404 Sumeru Prime, Bhavnagar, Gujarat",
+      link: "https://maps.app.goo.gl/ZNGSGoUaQrvuiz5NA"
     },
     {
       icon: "📞",
       title: "Phone Number",
-      details: "+1 234 567 8900",
-      link: "tel:+12345678900"
+      details: "+91 743 504 9814",
+      link: "tel:+917435049814"
     },
     {
       icon: "✉️",
       title: "Email Address",
-      details: "contact@cafirm.com",
-      link: "mailto:contact@cafirm.com"
+      details: "caakshat.dhruv@gmail.com",
+      link: "caakshat.dhruv@gmail.com"
     }
   ];
 
@@ -195,7 +195,7 @@ const Contact = () => {
               <div className="h-64 bg-gray-200 rounded-lg">
                 {/* Add your map component or iframe here */}
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986432970718!3d40.697149422113014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1647043087964!5m2!1sen!2s"
+                  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3705.475210084401!2d72.14390177527713!3d21.761861780077275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDQ1JzQyLjciTiA3MsKwMDgnNDcuMyJF!5e0!3m2!1sen!2sin!4v1748691985379!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
