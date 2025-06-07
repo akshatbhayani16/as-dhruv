@@ -62,12 +62,21 @@ const Services = () => {
       ]
     },
     {
-      title: "Advanced Services",
+      title: "Accounting & Book keeping Services",
       services: [
-        "Accounting & Book keeping Services",
-        "IND AS consultation",
+        "Accounting & Data Entry",
+        "Bookkeeping",
+        "Payroll Management",
+        "Financial statements preparation",
+        "Accounting overview and verification"
+      ]
+    },
+    {
+      title: "Advisory & Consultancy Services",
+      services: [
+        "IPO consultation",
         "AIF setting up",
-        "IPO consultation & applications"
+        "IND AS consultation"
       ]
     }
   ];

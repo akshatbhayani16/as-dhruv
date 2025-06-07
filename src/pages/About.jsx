@@ -24,28 +24,28 @@ const About = () => {
     {
       title: "The Beginning",
       text: "A S Dhruv & Associates, one of the growing chartered accountancy firms in the entrepreneurial state of India i.e. Gujarat lead by CA Akshat S. Dhruv, who have been qualified as chartered accountant in the year 2022.",
-      image: "/images/firm-establishment.jpg",
+      image: "/images/firm-establishment.jpeg",
       imageAlt: "Firm Establishment",
       icon: "🏢"
     },
     {
       title: "Academic Excellence",
       text: "CA Akshat Dhruv has achieved 2 times AIR (All India Rank) in his journey of becoming chartered accountant. Apart from that, he comes from a very strong academic background with awardee of one of the toughest scholarship programs in Gujarat – Mr. Dhirubhai Ambani scholarship program by Reliance foundation.",
-      image: "/images/academic-achievements.jpg",
+      image: "/images/academic-achievements.png",
       imageAlt: "Academic Achievements",
       icon: "🎓"
     },
     {
       title: "Professional Growth",
       text: "Post his qualification, to sharpen his skills and learning, Akshat Dhruv has joined one of the big 4s chartered accountancy firm PwC in Ahmedabad in the domain of Auditing & Assurance where he worked upon various assignments of Statutory Audit, Internal Audit, Stock Audit, Group Reporting, Tax Audits, IFC implementation etc. His Articleship program has also played a very vital role in his career shaping where he got the exposure of Direct as well as Indirect taxes and corporate laws.",
-      image: "/images/pwc-experience.jpg",
+      image: "/images/pwc-experience.jpeg",
       imageAlt: "PwC Experience",
       icon: "📈"
     },
     {
       title: "Industry Expertise",
       text: "CA Akshat Dhruv has catered to the needs of various clients across the industries like pharmaceutical, API manufacturing, Tyre manufacturing and distribution, logistics and Goods handling, Financing, Share and Commodities trading, Banking, Information Technology and IT enabled services, Travelling, Insurance broker, E commerce trading, Clearing and Forwarding Agent, Real Estate - Infra consultancy, NBFCs etc. in the domain of Income Tax, GST Laws, Assurance services and allied corporate laws.",
-      image: "/images/industry-expertise.jpg",
+      image: "/images/industry-expertise.jpeg",
       imageAlt: "Industry Expertise",
       icon: "💼"
     },
@@ -56,14 +56,14 @@ const About = () => {
       imageAlt: "Client Commitment",
       icon: "🤝"
     },
-    {
-      title: "Our Vision",
-      text: "Together, We Grow",
-      image: "/images/vision.jpg",
-      imageAlt: "Our Vision",
-      isMotto: true,
-      icon: "✨"
-    }
+    // {
+    //   title: "Our Vision",
+    //   text: "Together, We Grow",
+    //   image: "/images/vision.jpg",
+    //   imageAlt: "Our Vision",
+    //   isMotto: true,
+    //   icon: "✨"
+    // }
   ];
 
   return (
@@ -188,10 +188,6 @@ const About = () => {
                 <li className="flex items-start">
                   <span className="text-[#A8C3FF] mr-2">•</span>
                   <span className="text-[#5C6B8A]/80">Member of Institute of Chartered Accountants</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-[#A8C3FF] mr-2">•</span>
-                  <span className="text-[#5C6B8A]/80">Registered Tax Practitioner</span>
                 </li>
               </ul>
             </div>
