@@ -3,16 +3,60 @@ import { motion } from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    subject: '',
-    message: ''
+    Name: '',
+    Email: '',
+    PhoneNumber: '',
+    Subject: '',
+    Message: ''
   });
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    const apiEndPoint = 'https://script.google.com/macros/s/AKfycbzh4EBywb34b340BsfMMA0ZuYpWekbHuAkZRs7MsCEPoaqdvkd4hjHOkFr8H4lHEubkpQ/exec';
+    setIsSubmitting(true);
+    setSubmitStatus({ type: '', message: '' });
+
+    const formD = new FormData();
+    formD.append('Name',formData.Name);
+    formD.append('Email',formData.Email);
+    formD.append('Subject',formData.Subject);
+    formD.append('Message',formData.Message);
+    formD.append('PhoneNumber',formData.PhoneNumber);
+    formD.append('Date',new Date().toLocaleDateString())
+    setFormData({
+      Name: '',
+      Email: '',
+      Subject: '',
+      Message: '',
+      PhoneNumber: '',
+    });
+    try {
+      const response = await fetch(apiEndPoint, {
+        method: 'POST',
+        body: formD,
+      });
+  
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+  
+      const data = await response.json();
+      setFormData({
+        Name: '',
+        Email: '',
+        Subject: '',
+        Message: '',
+        PhoneNumber: '',
+      });
+      console.log('data',data);
+    } catch (err) {
+      console.log(err instanceof Error ? err.message : 'Something went wrong');
+    }finally{
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -96,14 +140,21 @@ const Contact = () => {
             className="bg-white rounded-lg shadow-lg p-8"
           >
             <h2 className="text-2xl font-bold text-[#1A1A1A] mb-6">Send a Message</h2>
+            {submitStatus.message && (
+              <div className={`mb-6 p-4 rounded-lg ${
+                submitStatus.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-[#1A1A1A] font-medium mb-2">Name</label>
                   <input
                     type="text"
-                    name="name"
-                    value={formData.name}
+                    name="Name"
+                    value={formData.Name}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-[#1F3C88]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F3C88] focus:border-transparent transition-all duration-200"
                     required
@@ -113,8 +164,8 @@ const Contact = () => {
                   <label className="block text-[#1A1A1A] font-medium mb-2">Email</label>
                   <input
                     type="email"
-                    name="email"
-                    value={formData.email}
+                    name="Email"
+                    value={formData.Email}
                     onChange={handleChange}
                     className="w-full px-4 py-2 border border-[#1F3C88]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F3C88] focus:border-transparent transition-all duration-200"
                     required
@@ -125,8 +176,8 @@ const Contact = () => {
                 <label className="block text-[#1A1A1A] font-medium mb-2">Phone</label>
                 <input
                   type="tel"
-                  name="phone"
-                  value={formData.phone}
+                  name="PhoneNumber"
+                  value={formData.PhoneNumber}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-[#1F3C88]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F3C88] focus:border-transparent transition-all duration-200"
                   required
@@ -136,8 +187,8 @@ const Contact = () => {
                 <label className="block text-[#1A1A1A] font-medium mb-2">Subject</label>
                 <input
                   type="text"
-                  name="subject"
-                  value={formData.subject}
+                  name="Subject"
+                  value={formData.Subject}
                   onChange={handleChange}
                   className="w-full px-4 py-2 border border-[#1F3C88]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F3C88] focus:border-transparent transition-all duration-200"
                   required
@@ -146,8 +197,8 @@ const Contact = () => {
               <div>
                 <label className="block text-[#1A1A1A] font-medium mb-2">Message</label>
                 <textarea
-                  name="message"
-                  value={formData.message}
+                  name="Message"
+                  value={formData.Message}
                   onChange={handleChange}
                   rows="4"
                   className="w-full px-4 py-2 border border-[#1F3C88]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1F3C88] focus:border-transparent transition-all duration-200"
@@ -156,9 +207,12 @@ const Contact = () => {
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#1F3C88] text-white py-2 px-6 rounded-lg hover:bg-[#4A6CF7] transition-colors duration-200 font-medium"
+                disabled={isSubmitting}
+                className={`w-full bg-[#1F3C88] text-white py-2 px-6 rounded-lg transition-colors duration-200 font-medium ${
+                  isSubmitting ? 'opacity-75 cursor-not-allowed' : 'hover:bg-[#4A6CF7]'
+                }`}
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </motion.div>
@@ -193,7 +247,6 @@ const Contact = () => {
             <div className="bg-white rounded-lg shadow-lg p-8">
               <h2 className="text-2xl font-bold text-[#1A1A1A] mb-6">Location</h2>
               <div className="h-64 bg-gray-200 rounded-lg">
-                {/* Add your map component or iframe here */}
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3705.475210084401!2d72.14390177527713!3d21.761861780077275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjHCsDQ1JzQyLjciTiA3MsKwMDgnNDcuMyJF!5e0!3m2!1sen!2sin!4v1748691985379!5m2!1sen!2sin"
                   width="100%"

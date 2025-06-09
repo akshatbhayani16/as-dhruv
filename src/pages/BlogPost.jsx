@@ -78,7 +78,7 @@ const BlogPost = () => {
             </div>
 
             {/* Share Section */}
-            <div className="mt-8 pt-8 border-t border-gray-200">
+            {/* <div className="mt-8 pt-8 border-t border-gray-200">
               <h3 className="text-lg font-semibold text-[#1A1A1A] mb-4">Share this article</h3>
               <div className="flex space-x-4">
                 <button className="bg-[#1F3C88] text-white p-2 rounded-full hover:bg-[#4A6CF7] transition-colors duration-200">
@@ -97,7 +97,7 @@ const BlogPost = () => {
                   </svg>
                 </button>
               </div>
-            </div>
+            </div> */}
 
             {/* Back to Blog List */}
             <div className="mt-8 pt-8 border-t border-gray-200">
