@@ -101,6 +101,14 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  to="/blog"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/contact"
                   className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
                 >
@@ -114,10 +122,63 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Services</h4>
             <ul className="space-y-2">
-              <li className="text-[#A8C3FF]">Tax Planning</li>
-              <li className="text-[#A8C3FF]">Audit & Assurance</li>
-              <li className="text-[#A8C3FF]">Business Advisory</li>
-              <li className="text-[#A8C3FF]">GST Services</li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Income Tax
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Auditing & Assurance
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Goods & Service Tax
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Corporate Law
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Financing
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Accounting & Book keeping Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/services"
+                  className="text-[#A8C3FF] hover:text-white transition-colors duration-200"
+                >
+                  Advisory & Consultancy Services
+                </Link>
+              </li>
+
             </ul>
           </div>
 
