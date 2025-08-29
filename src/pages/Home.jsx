@@ -145,8 +145,8 @@ const Home = () => {
 
       {/* Services Carousel */}
       <section className="py-20 bg-white">
-        <div className="container ml-4 px-4">
-          <div className="text-center mb-16">
+        <div className="container ml-4 px-4" style = {{marginLeft: "7%"}}>
+          <div className="text-center mb-16" style = {{marginLeft: "3%"}}>
             <h2 className="text-3xl md:text-4xl font-bold text-[#002B36] mb-4">
               Our Services
             </h2>

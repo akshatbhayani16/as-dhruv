@@ -145,7 +145,7 @@ const About = () => {
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <div className="absolute -inset-4 bg-gradient-to-r from-[#1F3C88] to-[#4A6CF7] rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                      {/* Removed blue box shadow background */}
                       <div className="relative">
                         <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
                           <img 
@@ -219,4 +219,4 @@ const About = () => {
   );
 };
 
-export default About; 
+export default About;
