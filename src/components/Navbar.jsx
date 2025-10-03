@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const location = useLocation();
@@ -143,57 +144,95 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="sm:hidden mt-3 pb-3 w-full">
-            <ul className="flex flex-col space-y-2">
-              <li>
-                <Link 
-                  to="/" 
-                  className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
-                  onClick={() => handleNavClick('/')}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="sm:hidden mt-3 pb-3 w-full overflow-hidden"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ 
+                duration: 0.3, 
+                ease: "easeInOut",
+                opacity: { duration: 0.2 }
+              }}
+            >
+              <motion.ul 
+                className="flex flex-col space-y-2"
+                initial={{ y: -20 }}
+                animate={{ y: 0 }}
+                exit={{ y: -20 }}
+                transition={{ duration: 0.2, delay: 0.1 }}
+              >
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: 0.1 }}
                 >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/about" 
-                  className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
-                  onClick={() => handleNavClick('/about')}
+                  <Link 
+                    to="/" 
+                    className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
+                    onClick={() => handleNavClick('/')}
+                  >
+                    Home
+                  </Link>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: 0.15 }}
                 >
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/services" 
-                  className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
-                  onClick={() => handleNavClick('/services')}
+                  <Link 
+                    to="/about" 
+                    className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
+                    onClick={() => handleNavClick('/about')}
+                  >
+                    About
+                  </Link>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: 0.2 }}
                 >
-                  Services
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/blog" 
-                  className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
-                  onClick={() => handleNavClick('/blog')}
+                  <Link 
+                    to="/services" 
+                    className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
+                    onClick={() => handleNavClick('/services')}
+                  >
+                    Services
+                  </Link>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: 0.25 }}
                 >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link 
-                  to="/contact" 
-                  className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
-                  onClick={() => handleNavClick('/contact')}
+                  <Link 
+                    to="/blog" 
+                    className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
+                    onClick={() => handleNavClick('/blog')}
+                  >
+                    Blog
+                  </Link>
+                </motion.li>
+                <motion.li
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.2, delay: 0.3 }}
                 >
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-        )}
+                  <Link 
+                    to="/contact" 
+                    className="block text-white hover:text-[#A8C3FF] transition-colors duration-200 py-2 px-1"
+                    onClick={() => handleNavClick('/contact')}
+                  >
+                    Contact
+                  </Link>
+                </motion.li>
+              </motion.ul>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </nav>
   );
